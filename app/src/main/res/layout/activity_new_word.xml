@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="myViewModel"
+            type="com.example.englishwrod.WordViewModel" />
+    </data>
+    <LinearLayout
+        android:id="@+id/linearlayoutActivityNewWord"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".NewWordActivity">
+
+
+        <EditText
+            android:id="@+id/editText_wordEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/big_padding"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-light"
+            android:text="@={myViewModel.inputWord_English}"
+            android:hint="@string/hint_wordEnglish"
+            android:inputType="textAutoComplete"
+            android:minHeight="@dimen/min_height"
+            android:textSize="18sp"
+            style="@style/word_input"/>
+
+        <EditText
+            android:id="@+id/editText_wordPersian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/big_padding"
+            android:fontFamily="sans-serif-light"
+            android:text="@={myViewModel.inputWord_Persian}"
+            android:textAlignment="center"
+            android:hint="@string/hint_wordpersian"
+            android:textDirection="rtl"
+            android:inputType="textAutoComplete"
+            android:minHeight="@dimen/min_height"
+            android:textSize="18sp"
+            style="@style/word_input"/>
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/big_padding"
+            android:background="#5AFD61"
+            android:onClick="@{()->myViewModel.saveOrUpdate()}"
+            android:text="@string/button_save"
+            android:textColor="@color/buttonLabel"
+            style="@style/word_title"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:contentDescription="@string/add_word"
+                android:src="@drawable/ic_baseline_done_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+</layout>

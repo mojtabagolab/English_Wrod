@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">English Word</string>
+    <string name="hint_wordEnglish">English Word...</string>
+    <string name="hint_wordpersian">  معنی فارسی... </string>
+    <string name="button_save">save</string>
+    <string name="button_delete">delete</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="add_word">Add word</string>
+</resources>
